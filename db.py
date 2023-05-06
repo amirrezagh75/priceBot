@@ -35,7 +35,6 @@ def coinData(coinName:str =""):
     if coinName:
         english = coins.find_one({'name': coinName.upper()})
         persian = coins.find_one({'persianName': coinName})
-        usdt = coins.find_one({'name': "USDT"})
         if english :
             coinDatas = [english]
             coins = list(coinDatas)
