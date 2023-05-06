@@ -51,6 +51,7 @@ def coinData(coinName:str =""):
     else:
         coins = list(coins.find())
         data = dumps(coins,indent =2 )
+        print (data)
     return data
 
 def priceTemplate(token: str = None) :
