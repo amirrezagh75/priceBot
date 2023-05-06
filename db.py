@@ -22,6 +22,7 @@ class Settings(BaseSettings):
 
 
 db_config = Settings()
+
 connectionString = f'mongodb://{db_config.DB_USER}:{db_config.DB_PASSWORD}@{db_config.DB_HOST}:{db_config.DB_PORT}/?authSource=admin' if db_config.DB_USER and db_config.DB_PASSWORD \
     else f'mongodb://{db_config.DB_HOST}:{db_config.DB_PORT}/'
 
