@@ -66,9 +66,8 @@ def priceTemplate(token: str = None) :
         tokens = list(
             filter(lambda x: x['name'] != "USDT",coins)
         )
-        USDT = list(
-            filter(lambda x: x['name'] == "USDT",coins)
-        )
+        sysvar = db.sysvars.find_one()
+        USDT = sysvar['dollarPrice']
 
         for coin in tokens:
             temp = "✅" if coin['pc1h'] >=0 else "🛑"
