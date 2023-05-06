@@ -25,7 +25,10 @@ settings = Settings()
 def main() -> None:
     app = ApplicationBuilder().token(settings.T_TOKEN).build()
     app.add_handlers(handlers=handlers.list)
-    app.run_polling()
+    try:
+        app.run_polling()
+    except Exception as error:
+        print(f"could'nt start service: {error}")
 
 
 if __name__ == '__main__':
