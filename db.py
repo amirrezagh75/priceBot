@@ -28,8 +28,7 @@ connectionString = f'mongodb://{db_config.DB_USER}:{db_config.DB_PASSWORD}@{db_c
 
 maxSevSelDelay = 1 
 client = MongoClient(connectionString, serverSelectionTimeoutMS=maxSevSelDelay)
-db = client.nestTest
-
+db = client[db_config.DB_NAME]
 
 def coinData(coinName:str =""):
     coins = db.coins
