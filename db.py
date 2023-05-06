@@ -37,12 +37,12 @@ def coinData(coinName:str =""):
         persian = coins.find_one({'persianName': coinName})
         usdt = coins.find_one({'name': "USDT"})
         if english :
-            coinDatas = english
+            coinDatas = [english]
             coins = list(coinDatas)
             data = dumps(coins,indent =2 )
             return data
         elif persian:
-            coinDatas = persian
+            coinDatas = [persian]
             coins = list(coinDatas)
             data = dumps(coins,indent =2 )
         else:
