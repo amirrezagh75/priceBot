@@ -71,7 +71,7 @@ def priceTemplate(token: str = None) :
 
         for coin in tokens:
             temp = "✅" if coin['pc1h'] >=0 else "🛑"
-            temp += f" {coin['persianName']}: {round(coin['price'], coin['decimal'])} دلار - {int(coin['price'] * USDT[0]['price'])} تومان \n"
+            temp += f" {coin['persianName']}: {round(coin['price'], coin['decimal'])} دلار - {int(coin['price'] * USDT)} تومان \n"
             
             body += temp
         if body:
